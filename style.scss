@@ -1,0 +1,235 @@
+$addWidth: 480px;
+$addHeight: 720px;
+
+
+@mixin transform($x, $y, $rotate, $slide:"") {
+  @if $slide == 'left'{
+    transform: translate($x - $addWidth, $y) rotate($rotate);
+    -webkit-transform: translate($x - $addWidth, $y) rotate($rotate);
+    -moz-transform: translate($x - $addWidth, $y) rotate($rotate);
+    -o-transform: translate($x - $addWidth, $y) rotate($rotate);  
+  }
+  @if $slide == 'right'{
+    transform: translate($x + $addWidth, $y) rotate($rotate);
+    -webkit-transform: translate($x + $addWidth, $y) rotate($rotate);
+    -moz-transform: translate($x + $addWidth, $y) rotate($rotate);
+    -o-transform: translate($x + $addWidth, $y) rotate($rotate);  
+  } 
+  @if $slide == 'top'{
+    transform: translate($x, $y - $addHeight) rotate($rotate);
+    -webkit-transform: translate($x, $y - $addHeight) rotate($rotate);
+    -moz-transform: translate($x, $y - $addHeight) rotate($rotate);
+    -o-transform: translate($x, $y - $addHeight) rotate($rotate);  
+  }
+  @if $slide == 'bottom'{
+    transform: translate($x, $y + $addHeight) rotate($rotate);
+    -webkit-transform: translate($x, $y + $addHeight) rotate($rotate);
+    -moz-transform: translate($x, $y + $addHeight) rotate($rotate);
+    -o-transform: translate($x, $y + $addHeight) rotate($rotate);  
+  }
+  @if $slide == ''{
+    transform: translate($x, $y);
+    -webkit-transform: translate($x, $y);
+    -moz-transform: translate($x, $y);
+    -o-transform: translate($x, $y);  
+  } 
+
+  @if $slide != ''{
+    &.active{
+      transform: translate($x, $y);
+      -webkit-transform: translate($x, $y);
+      -moz-transform: translate($x, $y);
+      -o-transform: translate($x, $y);    
+    } 
+  }  
+}
+
+
+@mixin transformRotate($x, $y, $z, $d, $rotate) {
+  transform: translate($x, $y) rotate($rotate);
+  -webkit-transform: translate($x, $y) rotate($rotate);
+  -moz-transform: translate($x, $y) rotate($rotate);
+  -o-transform: translate($x, $y) rotate($rotate);
+
+  &.active{
+    transform: translate($z, $d);
+    -webkit-transform: translate($z, $d);
+    -moz-transform: translate($z, $d);
+    -o-transform: translate($z, $d);    
+  }
+}
+.close { 
+	width:65px;height:65px;
+	position:absolute;
+	right:0;
+	a { display:block;width:60px;height:60px; }
+}
+::-webkit-scrollbar {
+  width: 7px;
+  /* for vertical scrollbars */
+  height: 7px;
+  /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.nota {
+  font-family: arial;
+  color: #000;
+  background-color: #fff;
+  font-size: 10px;
+  width: 100%;
+  height: $addHeight;
+  z-index: 2;
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 10px 20px 10px 10px;
+  box-sizing: border-box;
+}
+
+.nota-btn {
+  position: absolute;
+  font-family: arial;
+  color: #000;
+  font-size: 10px;
+  cursor: pointer;
+  bottom: 5px;
+  left: 5px;
+}
+
+.container {
+  position: relative;
+  width: $addWidth;
+  height: $addHeight;
+  background-image: url(img/bg.jpg);
+  overflow: hidden;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  // -webkit-box-shadow: inset 0px 0px 0px 1px rgba(50, 50, 50, 1);
+  // -moz-box-shadow:    inset 0px 0px 0px 1px rgba(50, 50, 50, 1);
+  // box-shadow:         inset 0px 0px 0px 1px rgba(50, 50, 50, 1);
+  background-color: #EEEEEE;
+}
+
+a img{
+    border: 0px;
+}
+
+.btn {
+  position: absolute;
+  z-index: 1;
+
+  @include transform(575px, 421px, 0deg);
+}
+
+#head {
+  position: absolute;
+  transition: 1s all;
+
+  @include transform(208px, 132px, 0deg, 'top');
+}
+
+#kwota {
+  position: absolute;
+  transition: 1s all;
+
+  @include transform(208px, 201px, 0deg, 'top');
+}
+
+#bulety {
+  position: absolute;
+  transition: 1s all;
+
+  @include transform(210px, 281px, 40deg, 'bottom');
+}
+
+
+
+
+
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
+
+
+.bootle{
+  position: absolute;
+  left: 163px;
+  top: 219px;
+  transform: rotate(0deg);
+  transition: 3s all;
+
+  z-index: 200
+}
+
+.click{
+  position: absolute;
+  top: 366px;
+  left: 178px;
+  z-index: 300;
+}
+
+.random{
+  width: 480px;
+  height: 481px;
+
+  background-image: url('img/0.jpg');
+
+  position: absolute;
+  top: 184px;
+
+  z-index: 100;
+
+  transition: .7s all;
+}
