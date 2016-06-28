@@ -51,7 +51,7 @@ $(document).ready(function() {
 		}, 2500);
 		
 		setTimeout(function(){
-			window.parent.location.href = url;
+			window.parent.location.href = "http://delivery.way2traffic.com/campaign=20457/click/195320/click.html?pb=12962&pc=588834&rd=TIMESTAMP";
 		}, 4000);
 
 	});
