@@ -51,7 +51,7 @@ $(document).ready(function() {
 		}, 2500);
 		
 		setTimeout(function(){
-			window.open(url,'_blank');
+			window.parent.location.href = url;
 		}, 4000);
 
 	});
