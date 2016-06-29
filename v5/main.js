@@ -26,22 +26,22 @@ $(document).ready(function() {
 
 		if( pozycja >= 0 && pozycja <= 90 ){
 			var img = 1;
-			var url = 'http://www.brita.pl/brita/pl-pl/cms/cpd_explore_pitcher.grid?ctcCategory=cpd_explore_pitcher';
+			var url = 'http://delivery.way2traffic.com/campaign=20457/click/195320/click.html?pb=12962&pc=588834&rd=TIMESTAMP';
 		}
 		
 		if( pozycja >= 90 && pozycja <= 180 ){
 			var img = 2;
-			var url = 'http://www.brita.pl/brita/pl-pl/cms/wkady/cpd_explore_cartridges.grid?ctcCategory=cpd_explore_cartridges';
+			var url = 'http://delivery.way2traffic.com/campaign=20457/click/195321/click.html?pb=12962&pc=588834&rd=TIMESTAMP';
 		}
 
 		if( pozycja >= 180 && pozycja <= 270 ){
 			var img = 3;
-			var url = 'http://www.brita.pl/brita/pl-pl/cms/cpd_explore_baterie_01.grid?nid=cpd_explore_onlineactive&ctcCategory=cpd_explore_onlineactive';
+			var url = 'http://delivery.way2traffic.com/campaign=20457/click/195320/click.html?pb=12962&pc=588834&rd=TIMESTAMP';
 		}
 
 		if( pozycja >= 270 && pozycja <= 360 ){
 			var img = 4;
-			var url = 'http://www.brita.pl/brita/pl-pl/cms/cpd_explore_hotwatersystems.grid?ctcCategory=cpd_explore_hotwatersystems';
+			var url = 'http://delivery.way2traffic.com/campaign=20457/click/195321/click.html?pb=12962&pc=588834&rd=TIMESTAMP';
 		}
 
 		setTimeout(function(){
@@ -51,7 +51,7 @@ $(document).ready(function() {
 		}, 2500);
 		
 		setTimeout(function(){
-			window.parent.location.href = "http://delivery.way2traffic.com/campaign=20457/click/195320/click.html?pb=12962&pc=588834&rd=TIMESTAMP";
+			window.parent.location.href = url;
 		}, 4000);
 
 	});
